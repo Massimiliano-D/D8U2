@@ -124,7 +124,7 @@ console.log(characters);
 const femaleCharacters = [];
 for (let i = 0; i < starWarsCharacters.length; i++) {
   if (starWarsCharacters[i].gender === "female") {
-    femaleCharacters.push(starWarsCharacters[i].name);
+    femaleCharacters.push(starWarsCharacters[i]);
   }
 }
 console.log(femaleCharacters);
@@ -161,10 +161,10 @@ console.log(eyeColor);
   Usa un while loop per calcolare la massa totale dell'equipaggio. Salvala in una variabile chiamata "crewMass".
 */
 let crewMass = 0;
-let crewNumber = 0;
-while (crewNumber < starWarsCharacters.length) {
-  crewMass = crewMass + starWarsCharacters[crewNumber].mass;
-  crewNumber = crewNumber + 1;
+let index = 0;
+while (index < starWarsCharacters.length) {
+  crewMass = crewMass + starWarsCharacters[index].mass;
+  index = index + 1;
 }
 console.log(crewMass);
 /* ESERCIZIO 7
@@ -182,12 +182,25 @@ console.log(crewMass);
 /* ESERCIZIO 8
   Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi effettuare la riassegnazione del valore corrispondente o creare un nuovo array)
 */
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  if (starWarsCharacters[i].gender === "n/a");
+  starWarsCharacters[i].gender = "robot";
+}
+console.log(starWarsCharacters);
 
 /* --EXTRA-- ESERCIZIO 9
   Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "characters" le stringhe corrispondenti a personaggi con lo stesso nome.
   Una volta fatto crea un console.log per controllare la proprietà length di "characters" prima e dopo l'operazione.
 */
-
+console.log(characters);
+for (let i = 0; i < femaleCharacters.length; i++) {
+  for (let j = 0; j < characters.length; j++) {
+    if (femaleCharacters[i].name === characters[j]) {
+      characters.splice(j, 1);
+    }
+  }
+}
+console.log(characters);
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
