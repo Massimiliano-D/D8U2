@@ -182,7 +182,7 @@ for (let i = 0; i < crewMass; i++)
   if (crewMass < 500) {
     console.log("Ship is under loaded");
   } else if (crewMass > 500 && crewMass < 700) {
-    console.log("Ship is under loaded");
+    console.log("Ship is half loaded");
   } else if (crewMass > 700 && crewMass < 900) {
     console.log("Warning: Load is over 700");
   } else if (crewMass > 900 && crewMass < 1000) {
@@ -216,3 +216,7 @@ console.log(characters);
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
+const randomIndex = Math.floor(Math.random() * starWarsCharacters.length);
+const selectedCharacter = starWarsCharacters[randomIndex];
+
+console.log(selectedCharacter);
